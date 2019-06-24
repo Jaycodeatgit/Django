@@ -1,0 +1,134 @@
+<div id="{{ modalId }}" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">{{ title }}</h4>
+            </div>
+            <div class="modal-body">
+                <form method="post" role="form" id="addrForm_{{ ix }}" class="form-horizontal text-left">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <div class="col-sm-2 col-sm-offset-2">
+                            <label for="streetName_{{ ix }}" class="control-label">Street Name</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="streetName_{{ ix }}" name='streetName'
+                                   placeholder="Street Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2 col-sm-offset-2">
+                            <label for="street_{{ ix }}" class="control-label">Street</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="street_{{ ix }}" name='street'
+                                   placeholder="Street">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2 col-sm-offset-2">
+                            <label for="aptNum_{{ ix }}" class="control-label">Apt Num</label>
+                        </div>
+                        <div class="col-lg-4">
+                            <input type="text" class="form-control" id="aptNum_{{ ix }}" name='aptNum'
+                                   placeholder="Apt Num" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2 col-sm-offset-2">
+                            <label for="city_{{ ix }}" class="control-label">City</label>
+                        </div>
+                        <div class="col-lg-4">
+                            <input type="text" class="form-control" id="city_{{ ix }}" name='city' placeholder="City"
+                                   required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2 col-sm-offset-2">
+                            <label for="state_{{ ix }}" class="control-label">State</label>
+                        </div>
+                        <div class="col-lg-4">
+                            <select  class="form-control" id="state_{{ ix }}" name='state'
+                                    required>
+                                <option value="AL">Alabama</option>
+                                <option value="AK">Alaska</option>
+                                <option value="AZ">Arizona</option>
+                                <option value="AR">Arkansas</option>
+                                <option value="CA">California</option>
+                                <option value="CO">Colorado</option>
+                                <option value="CT">Connecticut</option>
+                                <option value="DE">Delaware</option>
+                                <option value="DC">District Of Columbia</option>
+                                <option value="FL">Florida</option>
+                                <option value="GA">Georgia</option>
+                                <option value="HI">Hawaii</option>
+                                <option value="ID">Idaho</option>
+                                <option value="IL">Illinois</option>
+                                <option value="IN">Indiana</option>
+                                <option value="IA">Iowa</option>
+                                <option value="KS">Kansas</option>
+                                <option value="KY">Kentucky</option>
+                                <option value="LA">Louisiana</option>
+                                <option value="ME">Maine</option>
+                                <option value="MD">Maryland</option>
+                                <option value="MA">Massachusetts</option>
+                                <option value="MI">Michigan</option>
+                                <option value="MN">Minnesota</option>
+                                <option value="MS">Mississippi</option>
+                                <option value="MO">Missouri</option>
+                                <option value="MT">Montana</option>
+                                <option value="NE">Nebraska</option>
+                                <option value="NV">Nevada</option>
+                                <option value="NH">New Hampshire</option>
+                                <option value="NJ">New Jersey</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="NY">New York</option>
+                                <option value="NC">North Carolina</option>
+                                <option value="ND">North Dakota</option>
+                                <option value="OH">Ohio</option>
+                                <option value="OK">Oklahoma</option>
+                                <option value="OR">Oregon</option>
+                                <option value="PA">Pennsylvania</option>
+                                <option value="RI">Rhode Island</option>
+                                <option value="SC">South Carolina</option>
+                                <option value="SD">South Dakota</option>
+                                <option value="TN">Tennessee</option>
+                                <option value="TX">Texas</option>
+                                <option value="UT">Utah</option>
+                                <option value="VT">Vermont</option>
+                                <option value="VA">Virginia</option>
+                                <option value="WA">Washington</option>
+                                <option value="WV">West Virginia</option>
+                                <option value="WI">Wisconsin</option>
+                                <option value="WY">Wyoming</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2 col-sm-offset-2">
+                            <label for="zipCode_{{ ix }}" class="control-label">Zip Code</label>
+                        </div>
+                        <div class="col-lg-4">
+                            <input type="text" class="form-control" id="zipCode_{{ ix }}" name='zipCode'
+                                   placeholder="Zip" required>
+                        </div>
+                    </div>
+                    <div class="form-group" style="display: {{ dispCheckBox }}">
+                        <div class=" col-sm-offset-2">
+                            <label>
+                                <input id='setDefault_{{ ix }}' type="checkbox"> Make this default
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-default" id={{ submitId }}>Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
